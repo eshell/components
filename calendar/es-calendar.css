@@ -1,0 +1,21 @@
+.es-cal-cell{
+    font-size:.6em;
+    display:inline-block;
+    margin:0;
+    padding:0;
+    min-width:4em;
+    width:4em;
+    height:4em;
+    background:#eff;
+}.es-cal-cell-today{ background:#f00;}
+ .es-cal-cell-nil{ background:#aee;}
+
+.es-cal-cell-weekhead{
+    height:2em;
+    background:#eff;
+
+}
+.es-cal-header{
+    text-align: center;
+    background: #def;
+}.es-cal-header>span{font-weight:bold;}

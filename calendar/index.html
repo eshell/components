@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <title>Simple calendar demo</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="es-calendar.css" />
+
+</head>
+<body>
+
+<div ng-controller="Controller as ctrl">
+    <span>{{ctrl.calendar.date}}</span><br/>
+    <div ng-repeat-start="day in ctrl.calendar.display.weekdays track by $index" class="es-cal-cell es-cal-cell-weekhead">
+        {{day}}
+    </div>
+    <br ng-if="($index+1)%7==0"/>
+    <span ng-repeat-end></span>
+
+    <div ng-repeat-start="day in ctrl.calendar.display.days track by $index" class="es-cal-cell" ng-class="{'es-cal-cell-today':day == ctrl.calendar.date.getDate(),'es-cal-cell-nil':day==0}">
+        <span ng-if="day!=0">{{day}}</span>
+        <span ng-if="day==0">&nbsp;</span>
+    </div>
+    <br ng-if="($index+1)%7==0"/>
+    <span ng-repeat-end></span>
+</div>
+
+<script src="angular.min.js"></script>
+
+<script src="app.js"></script>
+<script src="es-calendar.js"></script>
+<script>
+    angular.bootstrap(document,['calendar']);
+</script> 
+</body>
+</html>
